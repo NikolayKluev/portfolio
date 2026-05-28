@@ -1,0 +1,18 @@
+@media (max-width: 834px) {
+
+    .container-nav {
+        flex-direction: column;
+    }
+
+    section {
+        width: 100% !important;
+    }
+
+    .container-main {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100% !important;
+    }
+}

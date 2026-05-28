@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Belepotan';
+  src: url('fonts/ofont.ru_Belepotan.ttf') format('truetype');        
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Playwrite';
+  src: url('fonts/PlaywriteGBS-Regular.ttf') format('truetype');        
+  font-weight: normal;
+  font-style: normal;
+}

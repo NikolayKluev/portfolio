@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/feedback.js" defer></script>
+    <script src="scripts/slider.js" defer></script>
+    <script src="scripts/projects.js" defer></script>
+    <script src="scripts/changeTheme.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/effect.js" defer></script>
+    <title>Страница веб-разработчика</title>
+</head>
+
+<body>
+    <header>
+        <nav class="container-nav" id="nav">
+            <div class="container-r">
+                <a href="/" class="nav-item">
+                    <h1>Веб-разработчик</h1>
+                </a>
+            </div>
+            <div class="container-nav-item nav-item">
+                <a class="nav-item" href="#about-me">Обо мне</a>
+                <a class="nav-item" href="#projects">Проекты</a>
+                <a class="nav-item" href="#contacts">Контакты</a>
+                <button class="nav-item" id="themeToggle">Переключить тему</button>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <div class="container-main">
+            <section>
+                <div class="container-c" id="about-me">
+                    <h2>Обо мне</h2>
+                    <div class="content" id="content">
+                        Я - Николай, в настоящее время являюсь студентом "Московского университета "Синергия", где обучаюсь по специальности "Разработчик веб- и мультимедийных приложений", окончил курс "Frontend разработка" в академии "Синергия".
+                        Владею современным стеком технологий: от верстки на <div class="tech">HTML5</div>, <div
+                            class="tech">CSS3</div> или <div class="tech">SCSS</div> до создания сложных интерактивных
+                        интерфейсов на <div class="tech">
+                            React</div> и <div class="tech">Vue</div>. Серверную логику реализую с помощью <div
+                            class="tech">Node.js</div> и <div class="tech">Express</div>, что позволяет мне создавать
+                        быстрые и эффективные веб-приложения. Строгое следование типизации на <div class="tech">
+                            TypeScript</div> гарантирует высокое качество и надежность кода. В работе использую <div
+                            class="tech">Git</div> для контроля версий и <div class="tech">Docker</div> для
+                        контейнеризации приложений, <div class="tech">Linux</div> в качестве основной ОС и <div class="tech">Nginx</div> для настройки веб‑серверов и проксирования — это обеспечивает удобство развёртывания, масштабирования и поддержки проектов.
+                    </div>
+                    <hr>
+                </div>
+                <div class="container-c" id="projects">
+                    <h2>Мои проекты</h2>
+                    <div class="slider">
+                        <div class="slider-container">
+                            <!-- Кнопки навигации -->
+                            <button class="slider-btn prev" onclick="moveSlide(-1)">‹</button>
+
+                            <div class="slides-wrapper">
+                                <div class="slides">
+                                    <div class="slide">                                        
+                                        <a class="card" onclick="openModal(1)">
+                                            <img src="images/yasenevo-1.png" alt="Yasenevo">
+                                            <h3>Сайт-визитка БК "Ясенево"</h3>
+                                        </a>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="card" onclick="openModal(2)">
+                                            <img src="images/bootstrap-1.png" alt="Bootstrap">
+                                            <h3>Bootstrap Grayscale</h3>
+                                        </div>
+                                    </div>                                    
+                                    <div class="slide">
+                                        <div class="card" onclick="openModal(3)">
+                                            <img src="images/todolist-1.png" alt="ToDoList">
+                                            <h3>ToDoList</h3>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="card" onclick="openModal(4)">
+                                            <img src="images/weather-1.png" alt="Weather">
+                                            <h3>Weather</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="slider-btn next" onclick="moveSlide(1)">›</button>
+
+                            <!-- Индикаторы -->
+                            <div class="indicators">
+                                <span class="indicator active" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="container-c" id="contacts">
+                    <h2>Контакты</h2>
+                    <div class="container-r" id="contacts-item">
+                        <div id="github">
+                            Мой github: <a href="https://github.com/NikolayKluev"
+                                target="_blank">https://github.com/NikolayKluev</a>
+                        </div>
+                        <div class="feedback" id="feedback">
+                            <h3>Обратная связь</h3>
+                            <div id="response"></div>
+                            <form id="contactForm">
+                                <div class="form-group">
+                                    <label for="name">Имя:</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Тема:</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Сообщение:</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button class="btn-send" type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside>
+                <hr>
+                <div id="weather-block">
+                    <h3>Погода по вашему местоположению</h3>
+                    <div id="weather-info"></div>
+                </div>
+                <hr>
+            </aside>
+        </div>
+
+        <hr>
+    </main>
+    <footer class="container-r">
+        <div class="container-r">2026</div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div class="modal-slider">
+                <!-- Сюда будут подгружаться изображения проекта -->
+            </div>
+            <div class="modal-description">
+
+            </div>
+            <div id="link-div">
+
+            </div>
+            <a id="gitLink" href="#" target="_blank">GitHub проекта</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
